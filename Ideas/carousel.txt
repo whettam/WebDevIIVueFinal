@@ -1,0 +1,18 @@
+<div class="card bg-warning p-1 m-5 border border-dark" style="width: 30rem;">
+    <img v-bind:src="obj.img" class="card-img-top border border-dark" alt="...">
+    <div class="card-body text-center">
+        <h5 class="card-title movie-title-text">{{obj.title}}</h5>
+        <p class="card-text">{{obj.overview}}</p>
+            <a v-on:click=addAdult class="btn m-2 btn-dark btn-lg align-items-end d-flex justify-content-center">Add Adult</a>
+            <a v-on:click=addChild class="btn btn-dark btn-lg align-items-end d-flex justify-content-center">Add Child</a>
+    </div>
+</div>
+
+
+index.html
+
+<div class="row justify-content-evenly">
+                    <card v-for="movie in movies" v-bind:obj="movie" v-on:adultclicked="addAdultTicket($event)"
+                        v-on:childclicked="addChildTicket($event)">
+                    </card>
+                </div>

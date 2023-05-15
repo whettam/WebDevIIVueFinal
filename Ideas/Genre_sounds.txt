@@ -1,0 +1,15 @@
+Add sounds unique to genres
+
+    -application
+        -When button is clicked to inquire about movie or a ticket is selected, play audio
+
+    - Short 1s clip of various notes played. 
+    - Kalimba
+    
+    - Various scales used per genres    
+        - Action/Adventure: Major
+        - Drama: Natural Minor
+        - Romance: Major and Minor Pentatonic
+        - Comedy: Major(whimsical)
+        - Sci-Fi: Whole-Tone, Diminished
+        - Horror: Phrygian, Locrian mode, Minor

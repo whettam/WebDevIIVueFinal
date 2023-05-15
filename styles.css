@@ -1,0 +1,195 @@
+/* Matt Ballard */
+/* 5/14/2023 */
+
+@font-face {
+    font-family: emerald;
+    src: url(/fonts/EmeraldGrey-DxXW.ttf);
+}
+
+@font-face {
+    font-family: bream;
+    src: url(/fonts/breamcatcher\ rg.otf);
+}
+
+.bg-size {
+    height: 88vh;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Table Border */
+  
+.movie-ticket-table {
+    position: relative;
+    border-radius: 20px;
+  }
+
+  /* Card shadow */
+
+  .custom-shadow {
+    box-shadow: 0px 8px 40px #fffecd;
+  }
+  
+
+/* Standard text styling */
+.section-header {
+    font-family: emerald;
+    font-size: 3.5rem;
+    -webkit-text-stroke: 2px #f5eaf5;
+}
+
+.main-title-text {
+    font-family: emerald;
+    font-size: 6rem;
+}
+
+.movie-title-text {
+    font-family: bream;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.bigger-info {
+    font-size: 2.5rem;
+}
+
+/* Projector Button */
+  
+.projector-img {
+    width: 150px;
+    height: auto;
+}
+
+.glow-effect {
+    border-radius: 30%;
+    box-shadow: -30px 0 10px 0 rgba(255, 255, 255, 0.8);
+    animation: glowing 3s infinite alternate;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.white-img {
+    filter: brightness(10000%);
+}
+
+/* More Text */
+
+.movie-info-text {
+    font-family: bream;
+    font-size: 2.5rem;
+}
+
+.movie-btn-text {
+    font-family: bream;
+    font-size: 2rem;
+}
+
+.header-main-title {
+    font-family: emerald;
+    font-size: 6rem;
+    animation: neon-glow 5s infinite alternate, fadeInLine 3s linear forwards 4s;
+    opacity: 0;
+}
+
+@keyframes neon-glow {
+    0% {
+        text-shadow: 0 6px -10px #944694, 4px 0 5px #ffaaff;
+    }
+
+    20% {
+        text-shadow: 0 0 1px #f5eaf5, 0 0 5px #c7bdc7;
+    }
+
+    50% {
+        text-shadow: 6px 0 1px #e3e4e6, 0 0 10px #7bf5a4;
+    }
+
+    100% {
+        text-shadow: 0 3px 8px #f1ffbe, 0 0 10px #c3df84;
+    }
+}
+
+@keyframes fadeInLine {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Line below */
+.line {
+    position: relative;
+    height: 2px;
+    background-color: rgb(33, 37, 41);
+    animation: expandLine 4s forwards;
+}
+
+@keyframes expandLine {
+    0% {
+        top: -150px;
+    }
+
+    100% {
+        top: 0
+    }
+}
+
+/* Footer styling */
+.footer-text {
+    font-family: emerald;
+}
+
+/* Button Styling */
+
+.btn-ticket {
+    background-image: url(images/ticket1.png);
+    background-size: contain;
+    background-color: rgb(61, 61, 61);
+}
+
+/* Media queries */
+@media (min-width: 1027px) {
+    .text-ignore {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1030px) {
+    .main-title-text {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 844px) {
+    .main-title-text {
+        font-size: 3rem;
+    }
+    .header-main-title {
+        font-size: 3rem;
+    }
+    .img-size {
+        width: 100px;
+        height: auto;
+    }
+    .proj-but {
+        text-align: center;
+    }
+}

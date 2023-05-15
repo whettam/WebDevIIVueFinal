@@ -1,0 +1,23 @@
+    // Unused experiment
+    async summarizeOverviews() {
+        try {
+            const requests = this.movies.map((movie) =>
+                axios.post("https://api.openai.com/v1/engines/davinci-codex/completions", {
+                    prompt: `Summarize ${movie.overview} in 6 words`,
+                    max_tokens: 6,
+                    temperature: 0.3,
+                    n: 1,
+                    stop: "\n",
+                })
+            );
+
+            const responses = await Promise.all(requests);
+
+            responses.forEach((response, index) => {
+                const completion = response.data.choices[0].text.trim();
+                this.movies[index].overview = completion;
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    },

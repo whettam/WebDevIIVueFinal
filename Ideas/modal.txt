@@ -1,0 +1,137 @@
+<div class="text-center" v-if="totalMovies > 0">
+                    <!-- <sumtable v-for="movie in movies" v-bind:tableObj="movie"></sumtable> -->
+
+                    <!-- Ticket Summary -->
+                    <div>
+                        <!-- If movies selected by user is greater than 0 then the table will populate -->
+                        <table v-if="selectedMovies.length > 0" class="table text-white bg-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Movie</th>
+                                    <th scope="col">Adult Tickets</th>
+                                    <th scope="col">Children Tickets</th>
+                                    <th scope="col">Subtotal</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Displays each movie in selectedMovies and uses the id of each movie as the key identifier -->
+                                <tr v-for="movie in selectedMovies" :key="movie.id" class="align-items-center justify-content-center">
+                                    <!-- Adding movie title and ticket price/quantity information. Have removal button next to adult or child -->
+                                    <th scope="row" class="movie-title-text">{{movie.title}}</th>
+                                    <td class="movie-info-text">{{movie.adultSelected}} x {{adultPrice}} <a
+                                            v-on:click=removeAdultTicket(movie.id)
+                                            class="btn btn-warning btn-sm rounded bigger-info">-</a> </td>
+                                    <td class="movie-info-text">{{movie.childSelected}} x {{childPrice}} <a
+                                            v-on:click=removeChildTicket(movie.id)
+                                            class="btn btn-warning btn-sm rounded bigger-info">-</a> </td>
+                                    <td class="movie-info-text">${{(movie.adultSelected * adultPrice + movie.childSelected *
+                                        childPrice).toFixed(2)}}</td>
+                                    <td class="movie-info-text"><a v-on:click=removeAllTickets(movie.id)
+                                            class="btn btn-warning btn-md rounded bigger-info">Remove All</a></td>
+                                </tr>
+                                <!-- Displaying adult/child/subtotal -->
+                                <tr class="text-center movie-info-text">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Total Adult Price: ${{totalAdultPrice}}</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="text-center movie-info-text">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Total Child Price: ${{totalChildPrice}}</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="text-center movie-info-text">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Subtotal: ${{totalPrice}}</td>
+                                    <td class="movie-info-text"><a class="btn btn-success btn-md rounded bigger-info">Checkout</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+Modalllllllll
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center" v-if="totalMovies > 0">
+                    <!-- <sumtable v-for="movie in movies" v-bind:tableObj="movie"></sumtable> -->
+
+                    <!-- Ticket Summary -->
+                    <div>
+                        <!-- If movies selected by user is greater than 0 then the table will populate -->
+                        <table v-if="selectedMovies.length > 0" class="table text-white bg-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Movie</th>
+                                    <th scope="col">Adult Tickets</th>
+                                    <th scope="col">Children Tickets</th>
+                                    <th scope="col">Subtotal</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Displays each movie in selectedMovies and uses the id of each movie as the key identifier -->
+                                <tr v-for="movie in selectedMovies" :key="movie.id" class="align-items-center justify-content-center">
+                                    <!-- Adding movie title and ticket price/quantity information. Have removal button next to adult or child -->
+                                    <th scope="row" class="movie-title-text">{{movie.title}}</th>
+                                    <td class="movie-info-text">{{movie.adultSelected}} x {{adultPrice}} <a
+                                            v-on:click=removeAdultTicket(movie.id)
+                                            class="btn btn-warning btn-sm rounded bigger-info">-</a> </td>
+                                    <td class="movie-info-text">{{movie.childSelected}} x {{childPrice}} <a
+                                            v-on:click=removeChildTicket(movie.id)
+                                            class="btn btn-warning btn-sm rounded bigger-info">-</a> </td>
+                                    <td class="movie-info-text">${{(movie.adultSelected * adultPrice + movie.childSelected *
+                                        childPrice).toFixed(2)}}</td>
+                                    <td class="movie-info-text"><a v-on:click=removeAllTickets(movie.id)
+                                            class="btn btn-warning btn-md rounded bigger-info">Remove All</a></td>
+                                </tr>
+                                <!-- Displaying adult/child/subtotal -->
+                                <tr class="text-center movie-info-text">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Total Adult Price: ${{totalAdultPrice}}</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="text-center movie-info-text">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Total Child Price: ${{totalChildPrice}}</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="text-center movie-info-text">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Subtotal: ${{totalPrice}}</td>
+                                    <td class="movie-info-text"><a class="btn btn-success btn-md rounded bigger-info">Checkout</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
